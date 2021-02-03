@@ -54,7 +54,6 @@ export default {
     margin-left: 120px;
     &-header{
       max-width: 585px;
-      max-height: 144px;
       p{
         font-style: normal;
         font-weight: 500;
@@ -115,5 +114,84 @@ export default {
       height: 519px;
     }
   }
+}
+@media screen and (max-width: 1100px){
+  .chart{
+    &__img{
+      img{
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px){
+  .chart{
+    height: 1024px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: normal;
+    &__info{
+      align-items: center;
+      margin-left: 60px;
+      margin-top: 40px;
+      &-header{
+        text-align: center;
+      }
+      &-main{
+        text-align: center;
+      }
+    }
+    &__img{
+      margin-right: 0;
+      margin-left: 120px;
+      margin-top: 32px;
+      img{
+        height: unset;
+        width: 419px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 558px){
+.chart{
+  align-items: flex-start;
+  &__info{
+    margin-left: 20px;
+    align-items: flex-start;
+    &-header{
+      width: 280px;
+      text-align: left;
+      p{
+        font-size: 40px;
+        line-height: 44px;
+      }
+    }
+    &-main{
+      width: 279px;
+      height: fit-content;
+      margin-left: 0px;
+      text-align: left;
+      p{
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+    &-btn{
+      button{
+        margin-top: 32px;
+      }
+    }
+  }
+  &__img{
+    margin-left: 20px;
+    img{
+      width: 280px;
+      height: 271px;
+    }
+
+  }
+}
 }
 </style>

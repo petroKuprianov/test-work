@@ -25,6 +25,33 @@
       </li>
     </ul>
   </nav>
+  <div class="header__menuMob">
+    <img @click="showMenu = !showMenu" src="../assets/eva_menu-fill.svg" alt="Burger menu icon">
+    <div v-if="showMenu" class="header__menuMob-menu">
+      <nav class="header__navMob">
+        <ul class="header__navMob-listMob">
+          <li class="header__navMob-itemMob">
+            <p>How it works</p>
+          </li>
+          <li class="header__navMob-itemMob">
+            <p>About</p>
+          </li>
+          <li class="header__navMob-itemMob">
+            <p>Instructions</p>
+          </li>
+          <li class="header__navMob-itemMob">
+            <p>Accounts</p>
+          </li>
+          <li class="header__navMob-itemMob">
+            <p>Platforms</p>
+          </li>
+          <li class="header__navMob-itemMob">
+            <p>Contact</p>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
   <div class="header__sign">
     <button id="button_sign">
       <p>Sign in for free</p>
@@ -35,12 +62,18 @@
     <img src="../assets/Vector.svg" alt="Vector">
   </div>
 
+
 </header>
 </template>
 
 <script>
 export default {
 name: "header-nav",
+  data(){
+  return{
+    showMenu:false
+  }
+  }
 }
 </script>
 
@@ -59,6 +92,43 @@ name: "header-nav",
       font-size: 15px;
       line-height: 16px;
       color: #333333;
+    }
+  }
+  &__navMob{
+
+    &-listMob{
+      //display: block;
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      li{
+        //margin-top: 10px;
+        //padding: 5px;
+        width: 100%;
+        padding: 10px 0px;
+        p{
+          margin-left: 10px;
+        }
+      }
+      li:hover{
+        background-color: #828282;
+      }
+
+    }
+  }
+  &__menuMob{
+    float: right;
+    margin-top: 32px;
+    margin-right: 28px;
+    display: none;
+    &-menu{
+      position: absolute;
+      right: 0px;
+      background: #bcb2fa;
+      border-radius: 10px;
+      width: 200px;
     }
   }
   &__nav{
@@ -133,5 +203,23 @@ name: "header-nav",
     }
 
   }
+}
+@media screen and (max-width:1155px) {
+  .header{
+    &__logo{
+      margin-left: 60px;
+    }
+  }
+}
+
+@media screen and (max-width:1100px) {
+.header{
+  &__nav{
+    display: none;
+  }
+  &__menuMob{
+    display: block;
+  }
+}
 }
 </style>

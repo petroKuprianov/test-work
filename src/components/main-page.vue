@@ -3,12 +3,14 @@
 
   <div class="main__steps">
     <div class="main__header">
+      <div class="main__overlay"></div>
     <span>
       Getting Started Is
     </span>
-      <div class="main__overlay"></div>
+
       <span>Fast & Easy</span>
     </div>
+    <div class="main__steps-container">
     <div class="main__steps-left">
       <div class="main__steps-left-step">
         <p class="main__steps-left-step-number">01.</p>
@@ -19,7 +21,7 @@
         <img src="../assets/Vector2.svg" alt="Vector img">
       </div>
       <div class="main__steps-left-step main__steps-left-second">
-        <p class="main__steps-left-step-number">01.</p>
+        <p class="main__steps-left-step-number">03.</p>
         <p class="main__steps-left-step-header">Register</p>
         <p class="main__steps-left-step-info">Complete the simple registration to get your trading credentials.</p>
       </div>
@@ -29,7 +31,7 @@
     </div>
     <div class="main__steps-right">
       <div class="main__steps-right-step">
-        <p class="main__steps-right-step-number">01.</p>
+        <p class="main__steps-right-step-number">02.</p>
         <p class="main__steps-right-step-header">Register</p>
         <p class="main__steps-right-step-info">Complete the simple registration to get your trading credentials.</p>
       </div>
@@ -37,23 +39,48 @@
             <img src="../assets/Vector3.svg" alt="Vector img">
           </div>
       <div class="main__steps-right-step">
-        <p class="main__steps-right-step-number">01.</p>
+        <p class="main__steps-right-step-number">04.</p>
         <p class="main__steps-right-step-header">Register</p>
         <p class="main__steps-right-step-info">Complete the simple registration to get your trading credentials.</p>
       </div>
     </div>
+    </div>
+
+    <div class="main__steps-containerMob">
+      <div class="main__steps-containerMob-step">
+        <p class="main__steps-containerMob-step-number">01.</p>
+        <p class="main__steps-containerMob-step-header">Register</p>
+        <p class="main__steps-containerMob-step-info">Complete the simple registration to get your trading credentials.</p>
+      </div>
+      <div class="main__steps-containerMob-step">
+        <p class="main__steps-containerMob-step-number">02.</p>
+        <p class="main__steps-containerMob-step-header">Register</p>
+        <p class="main__steps-containerMob-step-info">Complete the simple registration to get your trading credentials.</p>
+      </div>
+      <div class="main__steps-containerMob-step">
+        <p class="main__steps-containerMob-step-number">03.</p>
+        <p class="main__steps-containerMob-step-header">Register</p>
+        <p class="main__steps-containerMob-step-info">Complete the simple registration to get your trading credentials.</p>
+      </div>
+      <div class="main__steps-containerMob-step">
+        <p class="main__steps-containerMob-step-number">04.</p>
+        <p class="main__steps-containerMob-step-header">Register</p>
+        <p class="main__steps-containerMob-step-info">Complete the simple registration to get your trading credentials.</p>
+      </div>
+    </div>
+
   </div>
   <div class="main__invest">
     <div class="main__invest-left">
       <div class="main__invest-left-info">
+        <div class="main__overlay"></div>
         <span>
           People love Big
         </span>
-        <div class="main__overlay"></div>
         <span>Invest</span>
       </div>
       <div class="main__invest-left-swiper">
-        <button class="main__invest-left-btn" @click="showPrev" :disabled="isCurrent === 1">
+        <button class="main__invest-left-btn main__invest-left-swiper-first" @click="showPrev" :disabled="isCurrent === 1">
           <img src="../assets/Vector.svg" alt="Vector img">
         </button>
         <button class="main__invest-left-btn main__invest-left-swiper-second" @click="showNext" :disabled="isCurrent === 3">
@@ -72,6 +99,7 @@
           <p>Albert Abello</p>
           <p>Director of Growth</p>
         </div>
+        <img class="main__invest-scopeMob" src="../assets/scope.svg" alt="Scope img">
       </div>
       <div class="main__invest-right-comment">
         <p>This magical product actually works! It has radically
@@ -93,6 +121,7 @@
           <p>Albert Abello</p>
           <p>Director of Growth</p>
         </div>
+        <img class="main__invest-scopeMob" src="../assets/scope.svg" alt="Scope img">
       </div>
       <div class="main__invest-right-comment">
         <p>This magical product actually works! It has radically
@@ -114,6 +143,7 @@
           <p>Albert Abello</p>
           <p>Director of Growth</p>
         </div>
+        <img class="main__invest-scopeMob" src="../assets/scope.svg" alt="Scope img">
       </div>
       <div class="main__invest-right-comment">
         <p>This magical product actually works! It has radically
@@ -137,7 +167,7 @@
       <span>questions</span>
     </div>
     <div class="main__questions-items">
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(0)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
           <img @click="show(0)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[0] === true ? 'rotate' : ''">
@@ -155,10 +185,10 @@
         </div>
       </div>
 
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(1)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
-          <img @click="show(1)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[1] === true ? 'rotate' : ''">
+          <img src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[1] === true ? 'rotate' : ''">
         </div>
         <div v-if="isVisible[1]" class="main__questions-items-item-more">
           <p>
@@ -173,10 +203,10 @@
         </div>
       </div>
 
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(2)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
-          <img @click="show(2)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[2] === true ? 'rotate' : ''">
+          <img src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[2] === true ? 'rotate' : ''">
         </div>
         <div v-if="isVisible[2]" class="main__questions-items-item-more">
           <p>
@@ -191,10 +221,10 @@
         </div>
       </div>
 
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(3)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
-          <img @click="show(3)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[3] === true ? 'rotate' : ''">
+          <img src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[3] === true ? 'rotate' : ''">
         </div>
         <div v-if="isVisible[3]" class="main__questions-items-item-more">
           <p>
@@ -209,10 +239,10 @@
         </div>
       </div>
 
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(4)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
-          <img @click="show(4)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[4] === true ? 'rotate' : ''">
+          <img src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[4] === true ? 'rotate' : ''">
         </div>
         <div v-if="isVisible[4]" class="main__questions-items-item-more">
           <p>
@@ -227,10 +257,10 @@
         </div>
       </div>
 
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(5)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
-          <img @click="show(5)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[5] === true ? 'rotate' : ''">
+          <img src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[5] === true ? 'rotate' : ''">
         </div>
         <div v-if="isVisible[5]" class="main__questions-items-item-more">
           <p>
@@ -245,10 +275,10 @@
         </div>
       </div>
 
-      <div class="main__questions-items-item">
+      <div class="main__questions-items-item" @click="show(6)">
         <div>
           <p class="main__questions-items-item-header">How do I change my details?</p>
-          <img @click="show(6)" src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[6] === true ? 'rotate' : ''">
+          <img src="../assets/bi_plus.svg" alt="icon plus" :class="isVisible[6] === true ? 'rotate' : ''">
         </div>
         <div v-if="isVisible[6]" class="main__questions-items-item-more">
           <p>
@@ -276,7 +306,7 @@ export default {
     return{
       isCurrent: 1,
       isVisible: {
-        0: false,
+        0:false,
         1:false,
         2:false,
         3:false,
@@ -294,14 +324,6 @@ export default {
       this.isCurrent += 1;
     },
     show(item){
-      // console.log(item, 'click');
-      // this.isVisible[item] = true;
-      // console.log(this.isVisible);
-      // this.isVisible.forEach((i, index) => {
-      //
-      //   index != item ? i = false : i = true;
-      //   console.log(i, index);
-      // })
       if(this.isVisible[item] === true)
       {
         this.isVisible[item] = false;
@@ -320,7 +342,6 @@ export default {
 
 <style scoped lang="scss">
 .main{
-  //width: calc(100% - 280px);
   padding: 140px 120px;
   display: flex;
   flex-direction: column;
@@ -347,6 +368,12 @@ export default {
   &__steps{
     margin-top: 60px;
     display: flex;
+    &-container{
+      display: flex;
+    }
+    &-containerMob{
+      display: none;
+    }
     &-left {
       display: flex;
       flex-direction: column;
@@ -513,8 +540,12 @@ export default {
       margin-top: 97px;
       margin-right: 15px;
     }
+    &-scopeMob{
+      display: none;
+    }
     &-right{
       margin-top: 167px;
+      height: 380px;
       &-name{
         display: flex;
         &-text{
@@ -634,4 +665,265 @@ export default {
 .rotate{
   transform: rotate(45deg);
 }
+
+
+@media screen and (max-width: 1820px){
+.main{
+  display: block;
+  padding-right: 60px;
+  &__steps{
+    flex-direction: column;
+    &-container{
+      display: flex;
+    }
+    &-left{
+      margin-top: 70px;
+    }
+    &-right{
+      margin-top: 230px;
+    }
+  }
+  &__questions{
+    display: block;
+  }
+  &__vector{
+    margin-top: 87px;
+    position: absolute;
+    float: left;
+    left: 602px;
+    img{
+      max-width: 374px;
+    }
+  }
+  &__vector2{
+    margin-top: 423px;
+    position: absolute;
+    left: 602px;
+  }
+  &__vector3{
+    position: absolute;
+    left: 358px;
+  }
+  &__questions{
+    &-items{
+      &-item{
+        width: 100%;
+      }
+    }
+  }
+}
+}
+
+@media screen and (max-width: 1250px){
+  .main{
+    padding-left: 60px;
+    padding-right: 60px;
+    &__steps{
+      &-left{
+        &-step{
+          width: 329px;
+          height: 233px;
+
+        }
+        &-second{
+          margin-top: 85px;
+        }
+      }
+      &-right{
+        margin-top: 210px;
+        margin-left: 60px;
+        &-step{
+          width: 329px;
+          height: 233px;
+        }
+        &-step:last-child{
+          margin-top: 110px;
+        }
+      }
+    }
+
+
+    &__vector{
+      margin-top: 90px;
+      position: absolute;
+      float: left;
+      left: 390px;
+      img{
+        max-width: 250px;
+      }
+    }
+    &__vector2{
+      margin-top: 433px;
+      position: absolute;
+      left: 390px;
+      img{
+        width: 250px;
+      }
+    }
+    &__vector3{
+      margin-top: 130px;
+      position: absolute;
+      left: 200px;
+      img{
+        max-width: 250px;
+      }
+    }
+    &__invest{
+      &-scope{
+        margin-left: 62px;
+      }
+      &-left{
+        &-info{
+          max-width: 483px;
+          span{
+            //font-size: 46px;
+          }
+        }
+      }
+      &-right{
+        &-comment{
+          width: 400px;
+        }
+      }
+    }
+
+      &__questions{
+        &-items{
+          margin-left: 0;
+          &-item{
+            width: 100%;
+          }
+        }
+      }
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+  .main{
+    padding-top: 120px;
+    &__steps{
+      margin-top: 0;
+      &-right{
+        margin-left: 30px;
+      }
+    }
+    &__vector3{
+      margin-top: 130px;
+      position: absolute;
+      left: 225px;
+      img{
+        width: 193px;
+        height: 58px;
+      }
+    }
+    &__vector{
+      margin-top: 95px;
+      position: absolute;
+      float: left;
+      left: 390px;
+      img{
+        width: 193px;
+        height: 58px;
+      }
+    }
+    &__vector2{
+      margin-top: 433px;
+      position: absolute;
+      left: 390px;
+      img{
+        width: 193px;
+        height: 58px;
+      }
+    }
+    &__invest{
+      flex-direction: column;
+      &-scope{
+        //width: 33px;
+        //position: absolute;
+        //margin-top: 455px;
+        //left: 350px;
+        display: none;
+      }
+      &-scopeMob{
+        display: block;
+        margin-top: 16px;
+      }
+      &-left{
+        &-swiper{
+          &-first{
+            position: absolute;
+            margin-top: 140px;
+          }
+          &-second{
+            position: absolute;
+            margin-top: 140px;
+            left: 640px;
+          }
+        }
+      }
+
+      &-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        &-name{
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        &-comment{
+          width: 508px;
+          text-align: center;
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 758px){
+  .main{
+    padding-left: 20px;
+    &__header{
+      span{
+        font-size: 40px;
+        line-height: 44px;
+      }
+    }
+    &__steps{
+      &-container{
+        display: none;
+      }
+      &-containerMob{
+        display: block;
+        display: flex;
+        flex-direction: column;
+        &-step{
+          width: 280px;
+          height: 217px;
+          background: #FFFFFF;
+          border: 2px solid #4F62F6;
+          box-sizing: border-box;
+          border-radius: 30px;
+          &-number{
+              font-style: normal;
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 18px;
+              color: #4F62F6;
+          }
+        }
+      }
+    }
+  }
+}
+
 </style>
+<!--<div class="main__steps-containerMob-step">-->
+<!--<p class="main__steps-containerMob-step-number">04.</p>-->
+<!--<p class="main__steps-containerMob-step-header">Register</p>-->
+<!--<p class="main__steps-containerMob-step-info">Complete the simple registration to get your trading credentials.</p>-->
+<!--</div>-->

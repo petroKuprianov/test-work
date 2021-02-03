@@ -82,7 +82,6 @@ export default {
 <style scoped lang="scss">
 .footer{
   width: 100%;
-  //padding: 32px 120px;
   &__logo{
     &-text{
       font-style: normal;
@@ -198,4 +197,100 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 1439px){
+.footer{
+  &__top{
+    margin-left: 60px;
+    &-warning {
+      margin-left: 0;
+    }
+    &-disclaimer{
+      margin-left: 0;
+    }
+    &-nav{
+      margin-left: 0;
+    }
+  }
+  &__bottom{
+    margin-left: 60px;
+    &-wrapper{
+      a{
+        p{
+          margin-left: 0;
+        }
+      }
+      &-terms{
+        margin-left: 0;
+      }
+    }
+  }
+}
+}
+
+@media screen and (max-width: 1100px) {
+  .footer{
+    &__logo{
+      order: -2;
+    }
+    &__top{
+      margin-left: 0;
+      flex-direction: column;
+      align-items: center;
+
+      &-nav{
+        order: -1;
+        &-list{
+          display: flex;
+          justify-content: space-between;
+          &-item{
+            margin-top: 24px;
+            margin-left: 47px;
+          }
+        }
+      }
+      &-warning{
+        margin-top: 40px;
+        &-header{
+          text-align: center;
+        }
+        &-wrapper{
+
+          &-text{
+            text-align: center;
+          }
+        }
+
+      }
+      &-disclaimer{
+        margin-top: 32px;
+        &-header{
+          text-align: center;
+        }
+        &-wrapper{
+
+          &-text{
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__bottom{
+      margin-top: 40px;
+      &-wrapper{
+        flex-direction: column;
+        align-items: center;
+        &-copyright{
+
+        }
+        a{
+          p{
+            margin-top: 16px;
+          }
+        }
+      }
+      }
+    }
+  }
+
 </style>

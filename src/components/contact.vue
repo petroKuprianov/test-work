@@ -11,7 +11,7 @@
       <p class="contact__wrapper-info-address contact__wrapper-info-addressFirst">Phone:</p>
       <p class="contact__wrapper-info-addressValue">442038857261</p>
       <p class="contact__wrapper-info-address">Email:</p>
-      <p class="contact__wrapper-info-addressValue">help@google.com</p>
+      <p class="contact__wrapper-info-addressValue" >help@google.com</p>
       <p class="contact__wrapper-info-address">Address:</p>
       <div class="contact__wrapper-info-addressWrap">
         <p class="contact__wrapper-info-addressValue">Trust Company Complex, Ajeltake Road, Ajeltake Island, Majuro, Republic of the Marshall Islands, MH 96960</p>
@@ -181,5 +181,28 @@ export default {
 
     }
 }
-
+@media screen and (max-width: 1250px){
+  .contact{
+    &__overlay{
+      min-height: 1100px;
+    }
+    &__wrapper{
+      padding-bottom: 60px;
+      flex-direction: column;
+      align-items: flex-start;
+      &-info{
+        &-header{
+          margin-left: 130px;
+        }
+        &-owner{
+          margin-top: 32px;
+        }
+      }
+      &-form{
+        margin-top: 48px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 </style>
